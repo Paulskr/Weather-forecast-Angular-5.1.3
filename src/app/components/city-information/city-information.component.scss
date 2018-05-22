@@ -1,0 +1,136 @@
+.main_content {
+  .content_city-information {
+    .center-block {
+      width: 79%;
+      position: relative;
+      #google_map_init {
+        padding-top: 20px;
+        margin-bottom: 20px;
+      }
+    } 
+    // Main Forescast 
+    .weather_city {
+      background-color: rgba(236, 240, 241, 0.7);
+      width: 66%;
+      display: table;
+      margin: 0 auto;
+      margin-bottom: 90px;
+      .btn_main {
+        position: absolute;
+      }
+      .weather_city_main-forecast {     
+        padding: 60px 0;
+        text-align: center; 
+        vertical-align: middle; 
+        display: table-cell;
+        .city_name { 
+          font-size: 35px;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+        .city_temp {
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+        .city_descr {
+          font-size: 22px;
+          i {
+            vertical-align: middle;
+            padding-right: 10px;
+            font-size: 40px;
+          }
+        }
+      }
+    } 
+    // Table
+    .table_city {
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      tbody {
+        .table_city_list {
+          background: #c4c9ce;
+          &:nth-child(2n) {
+            background: #e1e6e6;
+          }
+        }
+      }
+    }
+  }
+}
+agm-map {
+  height: 400px;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 29px;
+}
+
+.left {
+  float: left;
+  left: 0;
+}
+
+.right {
+  float: right;
+  right: 0;
+}
+
+.btn_main {
+  padding: 9px 18px;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: #2C3E50;
+  color: #fff;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: transparent;
+    color: #2C3E50;
+    border: 1px solid #2C3E50;
+  }
+}
+
+/** Media Queries **/
+@media screen and (max-width: 992px) {
+  .main_content {
+    .content_city-information {
+      .center-block {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .main_content {
+    .content_city-information {
+      .center-block {
+        .weather_city {
+          width: 100%;
+          .btn_main {
+            left: 7px;
+            top: 7px;
+          }
+        }
+        .table_city {
+          tr {
+            th {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

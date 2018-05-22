@@ -1,0 +1,80 @@
+<section class="main_content">
+  <div class="container content_table">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <h1>{{ title }}</h1>
+        <div class="center-block">
+
+          <app-search></app-search>
+
+          <h2>Click on the city Id number to get extended forecast</h2> 
+          <!-- items being paged -->
+          <table class="table table_cities">
+            <!-- order content -->
+            <thead>
+              <tr>
+                <th [class.active]="order === 'id'" (click)="setOrder('id')">Id
+                  <span [hidden]="reverse">▼</span>
+                  <span [hidden]="!reverse">▲</span>
+                </th>
+                <th [class.active]="order === 'name'" (click)="setOrder('name')">Name
+                  <span [hidden]="reverse">▼</span>
+                  <span [hidden]="!reverse">▲</span>
+                </th>
+                <th [class.active]="order === 'country'" (click)="setOrder('country')">Country Abbreviation
+                  <span [hidden]="reverse">▼</span>
+                  <span [hidden]="!reverse">▲</span>
+                </th>
+              </tr>
+            </thead>
+
+            <!-- body content -->
+            <!-- [routerLink]="['/item', item.id]  ParamMap-->
+            <tbody>
+              <tr *ngFor="let listJson of pagedItems | orderBy: order:reverse:'case-insensitive'">
+                <th>
+                  <p><a [routerLink]="['/city-information', listJson.id]">{{listJson.id}}</a></p>
+                </th>
+                <td>
+                  <p>{{listJson.name}}</p>
+                </td>
+                <td>
+                  <p>{{listJson.country}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- pager -->
+        <div class="pagi-pagi">
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+
+            <!-- For() -->
+            <li *ngFor="let page of pager.pages" class="hidden-xs" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)">{{page}}</a>
+            </li>
+
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.totalPages)">Last</a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
