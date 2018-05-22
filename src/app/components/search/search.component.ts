@@ -13,8 +13,8 @@ import { Subject } from 'rxjs/Subject';
 
 export class SearchComponent implements OnInit {
 
-	private results: any = {};
-  private searchTerms = new Subject<string>();
+	results: any = {};
+  searchTerms = new Subject<string>();
 
 
   constructor(private http: HttpClient,

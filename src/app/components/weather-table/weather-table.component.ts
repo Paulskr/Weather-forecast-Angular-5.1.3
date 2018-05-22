@@ -20,10 +20,12 @@ import { WeatherService } from '../../services/weather.service';
 export class WeatherTableComponent implements OnInit {
   
   title = 'World Weather Application';
-	private listJsons: any;
+	listJsons: any;
+  
   // Pagination
   pager: any = {};
   pagedItems: any = [];
+
   // Order List
   reverse: boolean = false;
   order: string = 'name';

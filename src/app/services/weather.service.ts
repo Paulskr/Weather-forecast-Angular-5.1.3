@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class WeatherService {
 
-	private apiCityUrl: string;
+	apiCityUrl: string;
 
 	constructor( private http: HttpClient ) {
 		console.log('Weather Service Connected ...');

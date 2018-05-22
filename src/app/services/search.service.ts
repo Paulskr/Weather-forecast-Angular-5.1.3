@@ -14,9 +14,9 @@ import 'rxjs/add/observable/empty';
 @Injectable()
 export class SearchService {
 
-	private baseUrl: string = 'https://api.openweathermap.org/data/2.5/find';
-  private queryUrl: string = '?q=';
-  private endUrl: string = '&units=metric&appid=8371a82502f68c1f69df7d4fceb5cf42';
+	baseUrl: string = 'https://api.openweathermap.org/data/2.5/find';
+  queryUrl: string = '?q=';
+  endUrl: string = '&units=metric&appid=8371a82502f68c1f69df7d4fceb5cf42';
 
   constructor(private http: HttpClient) {
   	console.log('Search Service Connected ...');

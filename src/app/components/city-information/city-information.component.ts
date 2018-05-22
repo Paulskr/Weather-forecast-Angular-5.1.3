@@ -18,7 +18,7 @@ import { WeatherService } from '../../services/weather.service';
 export class CityInformationComponent implements OnInit {
   
   titleCity = 'Reference Forecast';
-  private dataLocation: any = {};
+  dataLocation: any = {};
   actionToggle: boolean = false;
 
   // google maps zoom level
