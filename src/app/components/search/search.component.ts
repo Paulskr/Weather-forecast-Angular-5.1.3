@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule, Routes } from "@angular/router";
 import { SearchService } from '../../services/search.service';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 
 @Component({

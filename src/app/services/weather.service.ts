@@ -1,9 +1,9 @@
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
+
 
 
 @Injectable()
@@ -20,15 +20,15 @@ export class WeatherService {
   }
     // Openweathermap list Api
 	cityWeatherForecast() {
-		return this.http.get(this.apiCityUrl)
-		.map(res => res);
+		return this.http.get(this.apiCityUrl).pipe(
+		map(res => res));
 	}
 
 	// Json Cities List
 	cityListJson() {
 		// Full cities list Openweathermap connected
-		return this.http.get("../../assets/city.list.json")
-		.map(res => res);
+		return this.http.get("../../assets/city.list.mini.json").pipe(
+		map(res => res));
 	}
 
 	

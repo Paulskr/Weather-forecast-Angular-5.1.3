@@ -1,14 +1,9 @@
+import { empty as observableEmpty,  Observable } from 'rxjs';
+import { catchError, map, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-// import { Observable } from 'rxjs/Rx'
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/empty';
+
 
 
 @Injectable()
@@ -24,15 +19,15 @@ export class SearchService {
 
 
   searchEntries(term) {
-    return this.http.get(this.baseUrl + this.queryUrl + term + this.endUrl)
-      .map(res => res);
+    return this.http.get(this.baseUrl + this.queryUrl + term + this.endUrl).pipe(
+      map(res => res));
   }
 
   search(terms: Observable<string>) {
-    return terms.debounceTime(500)
-      .distinctUntilChanged()
-      .switchMap(term => this.searchEntries(term)
-        .catch( error => { return Observable.empty() }));
+    return terms.pipe(debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(term => this.searchEntries(term).pipe(
+      catchError( error => { return observableEmpty() }))),);
   }
   //.filter(term => term && term.trim().length > 0)
 }

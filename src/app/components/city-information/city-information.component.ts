@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule, Routes, ActivatedRoute, ParamMap } from "@angular/router";
 import { Location } from '@angular/common';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
-
+import { Observable } from 'rxjs';
 import { WeatherService } from '../../services/weather.service';
 
 

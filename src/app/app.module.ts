@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'city-information/:id',
-    component: CityInformationComponent  
+    component: CityInformationComponent
   },
   {
     path: '**',
@@ -59,7 +59,7 @@ const appRoutes: Routes = [
     })
   ],
   providers: [ WeatherService, PagerService, SearchService ],
-  bootstrap: [ AppComponent ] 
+  bootstrap: [ AppComponent ]
 })
 
 

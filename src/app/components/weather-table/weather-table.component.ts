@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule, Routes, ActivatedRoute, ParamMap } from "@angular/router";
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
-
-import { PagerService } from '../../services/index'
+import { Observable } from 'rxjs';
+import { PagerService } from '../../services/index';
 import { WeatherService } from '../../services/weather.service';
 
 
