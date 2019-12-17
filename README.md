@@ -1,10 +1,6 @@
-# Weather Forecast Angular 5.1.3
+# Weather Forecast Angular 9.0.0-rc.6
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
-
-## DEMO
-
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20
 
 ## Install
 
