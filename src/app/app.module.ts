@@ -53,9 +53,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     OrderModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,{ useHash: true }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDvd99lTR-hv70jb4KFzZdDJsCtH9GTAAA' 
+      apiKey: 'AIzaSyBWo3bVAkjs23k4Pr7LJdguAqBHRHZxDBA' 
     })
   ],
   providers: [ WeatherService, PagerService, SearchService ],

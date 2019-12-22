@@ -19,7 +19,7 @@ export class CityInformationComponent implements OnInit {
   actionToggle: boolean = false;
 
   // google maps zoom level
-  zoom: number = 6;
+  zoom: number = 9;
   iconUrl: any;
   // Start Position
   lat: number;
